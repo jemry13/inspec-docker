@@ -1,0 +1,9 @@
+version: '3'
+services:
+  workstation:
+    container_name: workstation
+    image: inspec
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/root
