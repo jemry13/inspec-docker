@@ -3,7 +3,7 @@ FROM ruby:alpine
 ARG VERSION=4.3.2
 ARG GEM_SOURCE=https://rubygems.org
 
-RUN mkdir -p /share
+# RUN mkdir -p /share
 RUN apk add --update build-base libxml2-dev libffi-dev git openssh-client
 RUN gem install --no-document --source ${GEM_SOURCE} --version ${VERSION} inspec
 RUN gem install --no-document --source ${GEM_SOURCE} --version ${VERSION} inspec-bin
@@ -11,5 +11,5 @@ RUN apk del build-base
 
 # ENTRYPOINT ["inspec"]
 # CMD ["help"]
-VOLUME ["/share"]
-WORKDIR /share
+# VOLUME ["/share"]
+WORKDIR /root
